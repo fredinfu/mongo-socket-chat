@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mongodb": "^3.3.0-beta2",
+    "mongodb": "^2.2.33",
     "socket.io": "^2.2.0"
   }
 }

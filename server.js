@@ -10,16 +10,17 @@ mongo.connect('mongodb://127.0.0.1/mongochat', {useNewUrlParser: true}, (err, db
     }
 
     console.log('MongoDB connected...');
-
     // Connect to Socket.io
     client.on('connection', socket => {
-        let chat = db.collection('chats');
-
+        
+        
         // Create function to send status
         sendStatus = function(s) {
             socket.emit('status', s);
         }
-
+        
+        let chat = db.collection('chats');
+        
         // Get chats from mongo collection
         chat.find().limit(100).sort({_id:1}).toArray(function (err, res) {
             if (err) {
